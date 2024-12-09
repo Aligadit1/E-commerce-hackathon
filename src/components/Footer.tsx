@@ -5,17 +5,17 @@ import { Button } from "./ui/button";
 
 const Footer = () => {
   return (
-    <div className='w-full max-w-[1920px]  mx-auto h-[418px]'>
+    <div className='w-[100%] max-w-[1920px]  mx-auto h-[418px]'>
         <hr />
-        <div className='flex justify-between m-auto p-20 xl-1550:px-[225px] xl-1620:px-[300px] '>
+        <div className='flex foot-container  justify-between m-auto p-20 xl-1550:px-[200px] xl-1620:px-[250px] xl:px-[150px] xl-1950:px-[300px] '>
         <div className='shadow-custom-foot'>
-            <div className='flex flex-col items-start p-0 gap-6  w-[350px] h-[198px] left-[300px] '>
+            <div className='flex flex-col items-start p-0 gap-6 h-[198px] '>
             <div className='flex items-center p-0 gap-2'>    
             <Image src={"/LogoFooter.png"} alt="Logo" height={40} width={40} />
             <p className='font-[Inter] text-[26px] font-semibold leading-[31px] text-[#272343] h-[31px] w-[120px]'>Comforty</p>
             </div>
             <div>
-            <p className='font-[Inter] font-normal text-[16px] leading-6 tracking-[0%] opacity-60 text-[#272342] not-italic w-[286px] h-[77px]'>Vivamus tristique odio sit amet velit semper, eu posuere turpis interdum. <br /> Cras egestas purus
+            <p className='font-[Inter] font-normal text-[16px] leading-6 tracking-[0%] opacity-60 text-[#272342] not-italic logo-para w-[286px] h-[77px]'>Vivamus tristique odio sit amet velit semper, eu posuere turpis interdum. <br /> Cras egestas purus
             </p></div>
             <div className='flex items-start p-0 gap-1 w-[206px] h-[38px]'>
              <div className='h-9 w-9 socialLinks flex items-center content-center'>   
@@ -47,18 +47,18 @@ const Footer = () => {
                 <p className='w-[35px] h-[18px] font-[Inter] not-italic font-normal text-[16px] leading-[18px] text-[#272343]  hover:underline hover:text-[#007580]'>Help</p>
             </div>
         </div>
-        <div className='w-[424px] h-[142px]'>
+        <div className='h-[142px]'>
             <p className='newsletter-foot'>Newsletter</p>
             <input type="email" placeholder='Your Email' className=' w-[285px] h-[46px] bg-[#ffffff] border-input' />
-            <Button className='bg-[#029FAE] py-[9px] px-[14px] h-[46px] w-[127px] hover:bg-slate-500 ml-3 pb-[6px]'>Subscribe</Button>
+            <Button className='bg-[#029FAE] py-[9px] px-[14px] h-[46px] w-[127px] hover:bg-slate-500 ml-3 pb-[6px] button-res'>Subscribe</Button>
             <p className='contact-para'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tincidunt erat enim.</p>
         </div>
         </div>
         <hr />
         <div>
-        <div className='flex justify-between items-center py-[24px] px-[290px] h-[75px] shadow-custom-foot'>
-            <p className='mx-0 my-auto w-[348px] h-[21px] font-[Poppins] font-normal not-italic text-[14px] leading-[21px] text-[#9a9caa]'>@ 2021 - Blogy - Designed by Zakirsoft & Developed by Ali </p>
-           <Image src={"/Logos.png"} alt='payingmethod' height={27} width={227} className='h-[27px] w-[227px] mx-0 my-auto'/>
+        <div className='flex justify-between items-center py-[24px] px-[290px] header-res h-[75px] shadow-custom-foot'>
+            <p className='mx-0 my-auto h-[21px] font-[Poppins] font-normal not-italic text-[14px] leading-[21px] text-[#9a9caa]'>@ 2021 - Blogy - Designed by Zakirsoft & Developed by Ali </p>
+           <Image src={"/Logos.png"} alt='payingmethod' height={27} width={227} className='h-[27px] w-[227px] foot-img mx-0 my-auto'/>
         </div>
         </div>
     </div>

@@ -16,6 +16,7 @@ const config: Config = {
 		screens: {
 			'xl-1550': '1550px',
 			'xl-1620': '1620px',
+			'xl-1950': '1950px',
 		  },
   		colors: {
   			background: 'hsl(var(--background))',

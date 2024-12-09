@@ -9,7 +9,7 @@
   font-family: 'Inter';
 font-style: normal;
 font-weight: 500;
-font-size: 14px;
+font-size: 10px;
 line-height: 110%;
 text-transform: capitalize;
 }
@@ -53,6 +53,155 @@ opacity: 0.6;
 }
 .left-border{
   border-radius: 0px 0px 0px 48px;
+}
+.border-input-product{
+  border-bottom: 2px solid black;
+  background:none;
+  color: black;
+  padding-left:10px ;
+  padding-bottom: 2px;
+}
+.btn-border{
+  border-bottom: 2px solid black;
+  padding-bottom: 2px;
+}
+.border-input-product::placeholder{
+  color: #1E2832;
+}
+@media only screen and (max-width:1355px){
+  .header-res{
+    padding: 0;
+    justify-content: space-evenly;
+  }
+  .button-res{
+    padding: 2px;
+    width: fit-content;
+    gap: 0;
+  }
+  .logo-res{
+    height: 70%;
+    width: 10%;
+  }
+  .hero-res{
+    flex-direction: column;
+    height: 500px;
+    
+  }
+  .hero-head-res{
+    font-size: 30px;
+    margin: 0;
+  }
+  .hero-img-res{
+    height: 250px;
+    width: 250px;
+    margin: 0%;
+  }
+  .head-res{
+    font-size: 20px;
+  }
+  .feature-res{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 1000px;
+  }
+  .feature-main-container{
+    height:fit-content;
+  }
+  .category-main-container{
+    height: fit-content;
+  }
+  .chair-res{
+    height:200px ;
+    width: 200px;
+  }
+  .status-res{
+    height: 20px;
+    width: 35px;
+  }
+  .cart-res{
+    height: 20px;
+    width: 35px;
+    top: 215px;
+    left: 170px;
+  }
+  .product-res{
+    height: 350px;
+  }
+  .chair-price-res{
+    font-size: 14px;
+  }
+  .chair-name-res{
+    font-size: 12px;
+    margin: 0%;
+  }
+  .price-container-res{
+    padding: 0%;
+    margin: 0%;
+  }
+  .category-res{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 560px;
+  }
+  .chair-name-container{
+    width: 200px;
+    height: 50px;
+    padding: 0 20px;
+  }
+  .chair-name{
+    font-size: 15px;
+  }
+  .chair-quantity{
+    font-size: 12px;
+  }
+  .hot-res{
+    margin-top: 250px;
+    width: 70%;
+    height: 20%;
+  }
+  .product-res{
+    height: 2200px;
+  }
+  .foot-img{
+    width: 70px;
+    height: 20px;
+  }
+  .foot-container{
+    flex-direction: column;
+    gap: 20px;
+  }
+
+}
+@media only screen and (max-width:768px){
+  .hero-head-tab{
+    font-size: 16px ;
+    line-height: 20px;
+  }
+  .hero-para-tab{
+    font-size: 13px;
+  }
+  .logo-res-tab{
+    width: 80px;
+    height: 24px;
+  }
+  .hero-written-container-tab{
+    padding-top: 60px;
+  }
+  .hero-img-tab{
+    margin-top: 42px;
+  }
+  .border-input{
+    width: 100px;
+  }
+  .contact-para{
+    width: auto;
+  }
+  .logo-para{
+    width: auto;
+  }
+
 }
 
 @layer utilities {
