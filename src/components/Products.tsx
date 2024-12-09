@@ -152,7 +152,7 @@ const Products = () => {
             </div>
             </div>
     </div>
-    <div className='mt-20 bg-[rgba(30,40,50,0.05)] w-full flex flex-col items-center justify-center py-[100px]' >
+    <div className='mt-20 bg-[rgba(30,40,50,0.05)] w-full flex flex-col items-center justify-center py-[100px] max-w-[1990px] mx-auto' >
         <h2 className='font-[Roboto] not-italic font-medium text-[20px] md:text-[30px] lg:text-[50px] leading-[25px] md-leading-[35px] lg:leading-[59px] capitalize text-[#000000]'>Or subscribe to the newsletter</h2>
         <div className='flex gap-5 pt-[80px]'> 
             <input type="text" placeholder='Email Address' className='border-input-product md:w-[150px] lg:w-[643px] ' />

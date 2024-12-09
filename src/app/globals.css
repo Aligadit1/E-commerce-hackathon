@@ -68,6 +68,36 @@ opacity: 0.6;
 .border-input-product::placeholder{
   color: #1E2832;
 }
+.contact-input{
+  background-color: white;
+  border: 1px solid #9f9f9f;
+  border-radius: 4px;
+  margin-top: 13px;
+  padding-left: 20px;
+}
+.input-contact{
+  font-size: 8px;
+  padding-left: 0%;
+}
+@media only screen and (min-width:700px){
+  .input-contact{
+    font-size: 10px;
+    padding-left: 0%;
+  }
+}
+@media only screen and (min-width:1024px){
+  .input-contact{
+    font-size: 14px;
+    padding-left: 5px;
+  }
+}
+@media only screen and (min-width:1440px){
+  .input-contact{
+    font-size: 16px;
+    padding-left: 10px;
+    border-radius: 10px;
+  }
+}
 @media only screen and (max-width:1355px){
   .header-res{
     padding: 0;
