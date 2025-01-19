@@ -1,68 +1,116 @@
-import React from 'react'
-import Image from 'next/image'
-import { IoLogoFacebook } from "react-icons/io5";
+import Image from "next/image";
+import React from "react";
+import {
+  footerCategory,
+  footerLinks,
+  footerNewsletter,
+  footerSupport,
+} from "@/app/data/data";
+import Link from "next/link";
 import { Button } from "./ui/button";
-
 const Footer = () => {
   return (
-    <div className='w-[100%] max-w-[1920px]  mx-auto h-[418px]'>
+    <div className="max-w-[1920px]  mx-auto px-2 sm:px-10 lg:px-20 mt-16">
+      <hr />
+      <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 py-20 gap-5">
+        <div className="flex flex-col gap-6">
+          <div className="flex items-center gap-2">
+            <Image src={footerLinks.logo} alt="logo" height={40} width={40} />
+            <h1 className="font-[inter] font-semibold text-[#272343] text-lg md:text-xl lg:text-3xl">
+              {footerLinks.name}
+            </h1>
+          </div>
+          <p className="font-[inter] opacity-60 text-[#272343] text-base ">
+            {footerLinks.paragraph}{" "}
+          </p>
+          <div className="flex gap-2 items-center ">
+            {footerLinks.SocialLinks.map((link) => {
+              return (
+                <Link href={link.href}>
+                  <i
+                    key={link.id}
+                    className="h-[38px] w-[38px] hover:border-[#007580] hover:border-solid hover:border-[1px] flex items-center justify-center rounded-full text-[#636270] hover:text-[#007580]"
+                  >
+                    {link.icon}
+                  </i>
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+        <div className="flex flex-col gap-5 lg:items-center content-start">
+          <div className="w-[92px]">
+            <h4 className="text-[#9A9CAA] text-sm font-medium uppercase">
+              {footerCategory.head}
+            </h4>
+          </div>
+          <div className="flex flex-col gap-3">
+            {footerCategory.chairsCategory.map((category) => {
+              return (
+                <h2
+                  key={category.id}
+                  className="text-[#272343] text-base hover:text-[#007580] hover:underline font-[inter] justify-self-center "
+                >
+                  {category.name}
+                </h2>
+              );
+            })}
+          </div>
+        </div>
+        <div className="flex flex-col gap-5 lg:items-center content-start">
+          <div className="w-[130px]">
+            <h4 className="text-[#9A9CAA] text-sm font-medium uppercase">
+              {footerSupport.head}
+            </h4>
+          </div>
+          <div className="flex flex-col gap-3">
+            {footerSupport.chairsCategory.map((Support) => {
+              return (
+                <h2
+                  key={Support.id}
+                  className="text-[#272343] text-base hover:text-[#007580] hover:underline font-[inter] justify-self-center "
+                >
+                  {Support.name}
+                </h2>
+              );
+            })}
+          </div>
+        </div>
+        <div className="flex flex-col lg:items-center content-start ">
+          <div className="flex flex-col gap-3">
+            <h4 className="text-[#9A9CAA] text-sm font-medium uppercase">
+              {footerNewsletter.head}
+            </h4>
+            <div className="flex gap-2 max-[400px]:flex-col">
+              <input
+                type="text"
+                placeholder={footerNewsletter.placeholder}
+                className="text-[#9A9CAA] font-[inter] text-base border-[1px] border-solid border-[#E1E3E5] rounded-[8px] py-2 px-5"
+              />
+              <Button className="py-6 px-7 text-white bg-[#029FAE] font-semibold text-base hover:bg-[#F0F2F3] hover:text-black">
+                {footerNewsletter.btnText}
+              </Button>
+            </div>
+            <p className="text-[#272343] opacity-60 font-[inter] text-[15px] leading-[150%]">
+              {footerNewsletter.paragraph}
+            </p>
+          </div>
+        </div>
+      </div>
+      <div>
         <hr />
-        <div className='flex foot-container  justify-between m-auto p-20 xl-1550:px-[200px] xl-1620:px-[250px] xl:px-[150px] xl-1950:px-[300px] '>
-        <div className='shadow-custom-foot'>
-            <div className='flex flex-col items-start p-0 gap-6 h-[198px] '>
-            <div className='flex items-center p-0 gap-2'>    
-            <Image src={"/LogoFooter.png"} alt="Logo" height={40} width={40} />
-            <p className='font-[Inter] text-[26px] font-semibold leading-[31px] text-[#272343] h-[31px] w-[120px]'>Comforty</p>
-            </div>
-            <div>
-            <p className='font-[Inter] font-normal text-[16px] leading-6 tracking-[0%] opacity-60 text-[#272342] not-italic logo-para w-[286px] h-[77px]'>Vivamus tristique odio sit amet velit semper, eu posuere turpis interdum. <br /> Cras egestas purus
-            </p></div>
-            <div className='flex items-start p-0 gap-1 w-[206px] h-[38px]'>
-             <div className='h-9 w-9 socialLinks flex items-center content-center'>   
-            <IoLogoFacebook className='w-7 h-7 text-gray-500 pl-[8px] '  /></div>
-            <Image src={"/Group 48.png"} alt='twitter' height={38} width={38} className='socialLinks' />
-            <Image src={"/Group 50.png"} alt='instagram' height={38} width={38} className='socialLinks' />
-            <Image src={"/Group 46.png"} alt='pintrest' height={38} width={38} className='socialLinks' />
-            <Image src={"/Group 47.png"} alt='youtube' height={38} width={38} className='socialLinks' />
-            </div>
-            </div>
+        <div className="flex justify-between my-6">
+          <div className="text-[#9A9CAA] font-[poppins] text-sm ">
+            @ 2025 - Blogy - Designed by Zakirsoft & Developed by
+            <p className="text-[#272343] inline-block">Ali</p>
+          </div>
+          <div>
+          <Image src="/paypal.png.png" alt="payment" height={27} width={227} />
+          </div>
         </div>
-        <div className='flex flex-col items-start p-0 gap-5 category-foot w-[105px] h-[203px] '>
-            <p className='w-[82px] h-[15px] font-[Inter] not-italic font-medium text-[14px] leading-[15px] uppercase text-[#9A9CAA] tracking-[0.06em] '>Category</p>
-            <div className='flex flex-col items-start p-0 gap-3 w-[105px] h-[168px]'>
-                <p className='w-[35px] h-[18px] font-[Inter] not-italic font-normal text-[16px] leading-[18px] text-[#272343]  hover:underline hover:text-[#007580]'>Sofa</p>
-                <p className='w-[68px] h-[18px] font-[Inter] not-italic font-normal text-[16px] leading-[18px] text-[#272343]  hover:underline hover:text-[#007580]'>Armchair</p>
-                <p className='w-[83px] h-[18px] font-[Inter] not-italic font-normal text-[16px] leading-[18px] text-[#272343]  hover:underline hover:text-[#007580]'>Wing Chair</p>
-                <p className='w-[83px] h-[18px] font-[Inter] not-italic font-normal text-[16px] leading-[18px] text-[#272343]  hover:underline hover:text-[#007580]'>Desk Chair</p>
-                <p className='w-[105px] h-[18px] font-[Inter] not-italic font-normal text-[16px] leading-[18px] text-[#272343] hover:underline hover:text-[#007580] '>wooden Chair</p>
-                <p className='w-[86px] h-[18px] font-[Inter] not-italic font-normal text-[16px] leading-[18px] text-[#272343]  hover:underline hover:text-[#007580]'>Park Bench</p>
-            </div>
-        </div>
-        <div className='flex flex-col items-start p-0 gap-5 '>
-            <p className='w-[72px] h-[15px] font-[inter] not-italic font-medium text-[14px] leading-[15px] uppercase tracking-[0.06em] text-[#9A9CAA]' >Support</p>
-            <div className='flex flex-col items-start p-0 gap-3 w-[156px] h-[108px]'>
-                <p className='w-[115px] h-[18px] font-[Inter] not-italic font-normal text-[16px] leading-[18px] text-[#272343]  hover:underline hover:text-[#007580]'>Help & Support</p>
-                <p className='w-[156px] h-[18px] font-[Inter] not-italic font-normal text-[16px] leading-[18px] text-[#272343]  hover:underline hover:text-[#007580]'>Tearms & Conditions</p>
-                <p className='w-[105px] h-[18px] font-[Inter] not-italic font-normal text-[16px] leading-[18px] text-[#272343]  hover:underline hover:text-[#007580]'>Privacy Policy</p>
-                <p className='w-[35px] h-[18px] font-[Inter] not-italic font-normal text-[16px] leading-[18px] text-[#272343]  hover:underline hover:text-[#007580]'>Help</p>
-            </div>
-        </div>
-        <div className='h-[142px]'>
-            <p className='newsletter-foot'>Newsletter</p>
-            <input type="email" placeholder='Your Email' className=' w-[285px] h-[46px] bg-[#ffffff] border-input' />
-            <Button className='bg-[#029FAE] py-[9px] px-[14px] h-[46px] w-[127px] hover:bg-slate-500 ml-3 pb-[6px] button-res'>Subscribe</Button>
-            <p className='contact-para'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tincidunt erat enim.</p>
-        </div>
-        </div>
-        <hr />
-        <div>
-        <div className='flex justify-between items-center py-[24px] px-[290px] header-res h-[75px] shadow-custom-foot'>
-            <p className='mx-0 my-auto h-[21px] font-[Poppins] font-normal not-italic text-[14px] leading-[21px] text-[#9a9caa]'>@ 2021 - Blogy - Designed by Zakirsoft & Developed by Ali </p>
-           <Image src={"/Logos.png"} alt='payingmethod' height={27} width={227} className='h-[27px] w-[227px] foot-img mx-0 my-auto'/>
-        </div>
-        </div>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;
