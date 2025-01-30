@@ -4,7 +4,6 @@ import Heading from "../Heading";
 import { client } from "@/sanity/lib/client";
 import ProductCard from "../ProductCard";
 import { ProductInterface } from "../ProductInterface";
-import SkeletonLoader from "../SkeletonLoader";
 const FeaturedProducts =() => {
   // settting sates for handling data , errors and loading messsages
   const [featuredProducts, setFeaturedProducts] = useState([]);

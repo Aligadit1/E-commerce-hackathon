@@ -15,7 +15,7 @@ const ContactForm =  () => {
     resolver: zodResolver(contactFormSchema),
   });
 
-  const onSubmit =async (data: any) => {
+  const onSubmit =async (data:any) => {
     try{
       // Send email using emailjs
     const response = await emailjs.send(

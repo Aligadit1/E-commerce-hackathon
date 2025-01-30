@@ -1,10 +1,6 @@
 import React from 'react'
 import Image from 'next/image';
 import Hero from './Hero';
-import Heading from '../Heading';
-import { featuredProducts } from '@/app/data/data';
-import { FiShoppingCart } from "react-icons/fi";
-import { cn } from '@/lib/utils';
 import FeaturedProducts from './FeaturedProducts';
 import TopCategories from './TopCategories';
 import OurProducts from './OurProducts';

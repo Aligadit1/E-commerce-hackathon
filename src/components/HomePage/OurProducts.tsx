@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from "react";
 import Heading from "../Heading";
 import { client } from "@/sanity/lib/client";
-import SkeletonLoader from "../SkeletonLoader";
 import { ProductInterface } from "../ProductInterface";
 import ProductCard from "../ProductCard";
 const OurProducts = () => {

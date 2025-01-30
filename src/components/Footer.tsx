@@ -26,9 +26,8 @@ const Footer = () => {
           <div className="flex gap-2 items-center ">
             {footerLinks.SocialLinks.map((link) => {
               return (
-                <Link href={link.href}>
+                <Link href={link.href} key={link.id}>
                   <i
-                    key={link.id}
                     className="h-[38px] w-[38px] hover:border-[#007580] hover:border-solid hover:border-[1px] flex items-center justify-center rounded-full text-[#636270] hover:text-[#007580]"
                   >
                     {link.icon}

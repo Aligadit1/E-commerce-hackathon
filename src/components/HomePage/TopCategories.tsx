@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react'
 import Heading from '../Heading'
 import Image from 'next/image'
 import { client } from '@/sanity/lib/client'
-import SkeletonLoader from '../SkeletonLoader'
 type categories ={
   title: string,
   imageURL: string,
