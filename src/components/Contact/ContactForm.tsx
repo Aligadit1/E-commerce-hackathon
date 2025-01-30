@@ -1,21 +1,23 @@
 "use client"
-import { useForm } from "react-hook-form";
+import { SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod"
 import { contactFormSchema } from "./Contact";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 import emailjs from "emailjs-com";
+import { z } from "zod";
+type contactFormData = z.infer<typeof contactFormSchema>;
 const ContactForm =  () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
     reset
-  } = useForm({
+  } = useForm<contactFormData>({
     resolver: zodResolver(contactFormSchema),
   });
 
-  const onSubmit =async (data:any) => {
+  const onSubmit: SubmitHandler<contactFormData> =async (data:contactFormData) => {
     try{
       // Send email using emailjs
     const response = await emailjs.send(
