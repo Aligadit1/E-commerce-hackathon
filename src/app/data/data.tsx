@@ -62,23 +62,6 @@ export const featuredProducts=[
         blueTag:"New",
     },
 ];
-export const TopCategoriesData = [{
-    id:1,
-    name:"Wing Chair",
-    quantity:"3584 Products",
-    href:"/TC1.png",
-},{
-    id:2,
-    name:"Wooden Chair",
-    quantity:"157 Products",
-    href:"/TC2.png",
-},{
-    id:3,
-    name:"Desk Chair",
-    quantity:"154 Products",
-    href:"/TC3.png",
-},
-];
 export const ourProducts=[
     {
         id:1,
@@ -228,94 +211,7 @@ export const footerNewsletter={
     btnText:"Subscribe",
     paragraph:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tincidunt erat enim."
 }
-export const allProducts=[
-    {
-        id:1,
-        name:"Library Stool Chair",
-        price:"$39",
-        discountedPrice:"$20",
-        image:"/FP1.png",
-        blueTag:"New",
-    },
-    {
-        id:2,
-        name:"Library Stool Chair",
-        price:"$39",
-        discountedPrice:"$20",
-        image:"/FP2.png",
-        orangeTag:"Sale",
-    },
-    {
-        id:3,
-        name:"Library Stool Chair",
-        discountedPrice:"$20",
-        image:"/FP3.png",
-    },
-    {
-        id:4,
-        name:"Library Stool Chair",
-        discountedPrice:"$20",
-        image:"/FP4.png",
-    },
-    
-    {
-        id:5,
-        name:"Library Stool Chair",
-        price:"$39",
-        discountedPrice:"$20",
-        image:"/TC2.png",
-        blueTag:"New",
-    },
-    {
-        id:6,
-        name:"Library Stool Chair",
-        price:"$39",
-        discountedPrice:"$20",
-        image:"/OP6.png",
-        orangeTag:"Sale",
-    },
-    {
-        id:7,
-        name:"Library Stool Chair",
-        discountedPrice:"$20",
-        image:"/OP7.png",
-    },
-    {
-        id:8,
-        name:"Library Stool Chair",
-        discountedPrice:"$20",
-        image:"/FP1.png",
-    },
-    {
-        id:9,
-        name:"Library Stool Chair",
-        price:"$39",
-        discountedPrice:"$20",
-        image:"/TC1.png",
-        blueTag:"New",
-    },
-    {
-        id:10,
-        name:"Library Stool Chair",
-        price:"$39",
-        discountedPrice:"$20",
-        image:"/FP2.png",
-        orangeTag:"Sale",
-    },
-    {
-        id:11,
-        name:"Library Stool Chair",
-        discountedPrice:"$20",
-        image:"/FP3.png",
-    },
-    {
-        id:12,
-        name:"Library Stool Chair",
-        discountedPrice:"$20",
-        image:"/TC3.png",
-    },
 
-]
 export const contactData = [
     {
         id:1,

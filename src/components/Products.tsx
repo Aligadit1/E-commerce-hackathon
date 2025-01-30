@@ -1,61 +1,77 @@
-import React from "react";
+"use client"
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Heading from "./Heading";
-import { cn } from "@/lib/utils";
-import { FiShoppingCart } from "react-icons/fi";
-import { allProducts } from "@/app/data/data";
+import { client } from "@/sanity/lib/client";
+import SkeletonLoader from "./SkeletonLoader";
+import ProductCard from "./ProductCard";
 const Products = () => {
+    // settting sates for handling data , errors and loading messsages
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
+  const fetchingData=async ()=>{
+    setLoading(true)
+    setError(null)
+    try{
+const products = await client.fetch(`*[_type == "products"]{
+  _id,
+  "imageUrl": image.asset->url, // Fetch the actual image URL
+  price,
+  priceWithoutDiscount,
+  title,
+  greenTag,
+  badge,
+}`) 
+// adding featured products in the state of products array to dispaly data
+setProducts(products)
+}
+// catching error and setting state for displaying a readable error message for the user
+catch(err) {
+  console.error("failed to fetch products",err);
+  setError("Failed to load products, please try refreshing");
+}
+ // setting the state to stop loading if the data is displayed or error message is displayed
+finally{
+  setLoading(false);
+}
+}
+  useEffect(()=>{
+fetchingData()
+  },[])
+    // displaying skeleton loading while data is being fetched and displayed after the fetch operation is completed or error is encountered.
+    if (loading) {
+      return (
+        <div className="flex flex-col items-center justify-center">
+        <SkeletonLoader/>
+        </div>
+      );
+    }
+  // displaying readable error message
+  if (error) {
+    return (
+      <div className="text-center mt-16 text-red-500">
+        <p>{error}</p>
+        <button
+          onClick={fetchingData}
+          className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+        >
+          Retry
+        </button>
+      </div>
+    );
+  }
+  
+  
   return (
     <div className="max-w-[1920px] mx-auto w-full">
     <div className="w-full px-2 sm:px-10 lg:px-20 mt-16">
         <div>
             <Heading Head="All Products" />
         </div>
-            <div className="w-full mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 py-5 gap-5">
-                    {allProducts.map((product) => {
-                      return (
-                        <div
-                          key={product.id}
-                          className="flex flex-col gap-3 items-start cursor-pointer relative"
-                        >
-                          <Image
-                            src={product.image}
-                            alt="product"
-                            height={312}
-                            width={312}
-                            className="w-full"
-                          />
-                          <div className="flex items-center justify-between w-full">
-                            <div>
-                              <p className="text-base font-[inter] hover:text-[#007580]">
-                                {product.name}
-                              </p>
-                              <div className="flex">
-                                <p className="text-[#272343] font-semibold font-[inter] text-lg">
-                                  {product.discountedPrice}
-                                </p>
-                                <p className="text-[#9A9CAA] text-sm font-[inter] line-through">
-                                  {product?.price}
-                                </p>
-                              </div>
-                            </div>
-                            <div className="bg-[#F0F2F3] hover:bg-[#029FAE] hover:text-white h-11 w-11 rounded-lg flex items-center justify-center">
-                              <FiShoppingCart className="h-6 w-6" />
-                            </div>
-                          </div>
-                          <div
-                            className={cn(
-                              product.blueTag ? "bg-[#01AD5A]" : "",
-                              product.orangeTag ? "bg-[#F5813F]" : "",
-                              "w-[49px] h-[26px] text-xs font-[inter] font-medium flex items-center justify-center rounded-sm absolute top-5 left-5 "
-                            )}
-                          >
-                            {product.blueTag ? product.blueTag : product.orangeTag}
-                          </div>
-                        </div>
-                      );
-                    })}
-        </div>
+            
+             <ProductCard products={products} />
+        
         </div>
         
       <div className="mt-20 bg-[rgba(30,40,50,0.05)] w-full flex flex-col items-center justify-center py-[100px]">
@@ -66,7 +82,7 @@ const Products = () => {
           <input
             type="email"
             placeholder="Email Address"
-            className="border-input-product md:w-[150px] lg:w-[643px] "
+            className="border-input-product w-full md:w-[300px] lg:w-[643px] "
           />
           <button className="btn-border">SUBMIT</button>
         </div>
@@ -81,5 +97,6 @@ const Products = () => {
     </div>
   );
 };
+
 
 export default Products;

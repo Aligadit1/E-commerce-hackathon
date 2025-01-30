@@ -1,63 +1,79 @@
-import React from "react";
+"use client"
+import React, { useEffect, useState } from "react";
 import Heading from "../Heading";
-import { ourProducts } from "@/app/data/data";
-import Image from "next/image";
-import { cn } from "@/lib/utils";
-import { FiShoppingCart } from "react-icons/fi";
-
+import { client } from "@/sanity/lib/client";
+import SkeletonLoader from "../SkeletonLoader";
+import { ProductInterface } from "../ProductInterface";
+import ProductCard from "../ProductCard";
 const OurProducts = () => {
-  return (
+  // settting sates for handling data , errors and laoding messsages
+  const [ourProducts,setOurProduct] = useState<ProductInterface[]>([])
+  const [loading,setLoading] = useState(true)
+  const [error,setError] = useState<string| null>(null)
+    
+    const fetchProducts = async ()=>{
+      setLoading(true)
+      setError(null)
+      try {
+        // fetching data from sanity
+      const products = await client.fetch(`*[_type == "products"]{
+        _id,
+        title,
+        "imageUrl": image.asset->url, // Fetch the actual image URL
+        tags,
+        price,
+        greenTag,
+        badge,
+        priceWithoutDiscount,}`)
+          // filtering data with tag ourProduct 
+        const filteredProducts = products.filter((product:ProductInterface)=>product.tags && product.tags.includes("ourProducts")).slice(0,8)
+         // adding featured products in the state of our Products array to dispaly data
+        setOurProduct(filteredProducts) 
+      
+      }
+      // catching error and setting state for displaying a readable error message for the user
+      catch (error){
+        console.error("Failed to fetch products:",error)
+        setError("failed to load products, please try refreshing")
+      }
+      // setting the state to stop loading if the data is displayed or error message is displayed
+      finally{
+        setLoading(false)
+      }
+
+    }
+    useEffect( () => {
+    fetchProducts()
+  }, [])
+// displaying loading message while data is being fetched and displayed after the fetch operation is completed or error is encountered.
+if (loading) {
+  return(
+    <div className="text-center mt-16 ">
+     <p>loading products...</p>
+     </div>
+        )
+}
+  // displaying readable error message
+  if (error) {
+    return <div className="text-center mt-16 text-red-500">
+    <p>{error}</p>
+    <button
+      onClick={fetchProducts}
+      className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+    >
+      Retry
+    </button>
+  </div> 
+  }
+   return (
     <div className="mt-16 w-full">
       <div>
         <Heading Head="Our Products" />
       </div>
-      <div className="w-full mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 py-5 gap-5">
-        {ourProducts.map((product) => {
-          return (
-            <div
-              key={product.id}
-              className="flex flex-col gap-3 items-start cursor-pointer relative"
-            >
-              <Image
-                src={product.image}
-                alt="product"
-                height={312}
-                width={312}
-                className="w-full"
-              />
-              <div className="flex items-center justify-between w-full">
-                <div>
-                  <p className="text-base font-[inter] hover:text-[#007580]">
-                    {product.name}
-                  </p>
-                  <div className="flex">
-                    <p className="text-[#272343] font-semibold font-[inter] text-lg">
-                      {product.discountedPrice}
-                    </p>
-                    <p className="text-[#9A9CAA] text-sm font-[inter] line-through">
-                      {product?.price}
-                    </p>
-                  </div>
-                </div>
-                <div className="bg-[#F0F2F3] hover:bg-[#029FAE] hover:text-white h-11 w-11 rounded-lg flex items-center justify-center">
-                  <FiShoppingCart className="h-6 w-6" />
-                </div>
-              </div>
-              <div
-                className={cn(
-                  product.blueTag ? "bg-[#01AD5A]" : "",
-                  product.orangeTag ? "bg-[#F5813F]" : "",
-                  "w-[49px] h-[26px] text-xs font-[inter] font-medium flex items-center justify-center rounded-sm absolute top-5 left-5 "
-                )}
-              >
-                {product.blueTag ? product.blueTag : product.orangeTag}
-              </div>
-            </div>
-          );
-        })}
-      </div>
+      <ProductCard products={ourProducts}/>
     </div>
   );
+
 };
 
 export default OurProducts;

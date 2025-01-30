@@ -1,3 +1,5 @@
+import { hostname } from 'os';
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     webpack(config) {
@@ -7,6 +9,12 @@ const nextConfig = {
         });
     
         return config;
+      },
+      images: {
+        remotePatterns:[
+          {
+          hostname:"cdn.sanity.io"
+      }],
       },
 };
 
