@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
-import { Button } from '../ui/button'
 import Link from 'next/link'
+import CartButton from './CartButton'
 
 const HeaderP2 = () => {
   return (
@@ -14,15 +14,7 @@ const HeaderP2 = () => {
           </h1>
         </div>
         <Link href="/cart">
-          <Button className="bg-white gap-2 flex hover:bg-[#F0F2F3] ">
-            <Image src="/cartIcon.svg" alt="Cart" height={22} width={22} />
-            <p className="font-medium text-xs md:text-sm text-[#272343] ">
-              Cart
-            </p>
-            <div className='bg-[#007580] text-white rounded-[100%] h-5 w-5 flex items-center justify-center '>
-              <p className='font-medium text-xs'>0</p>
-              </div>
-          </Button>
+          <CartButton/>
         </Link>
       </div>
     </div>

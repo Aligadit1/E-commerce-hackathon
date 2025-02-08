@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import Heading from "../Heading";
 import { client } from "@/sanity/lib/client";
-import { ProductInterface } from "../ProductInterface";
+import { ProductInterface } from "@/app/data/data";
 import ProductCard from "../ProductCard";
 const OurProducts = () => {
   // settting sates for handling data , errors and laoding messsages
@@ -23,7 +23,8 @@ const OurProducts = () => {
         price,
         greenTag,
         badge,
-        priceWithoutDiscount,}`)
+        priceWithoutDiscount,
+        "slug":slug.current,}`)
           // filtering data with tag ourProduct 
         const filteredProducts = products.filter((product:ProductInterface)=>product.tags && product.tags.includes("ourProducts")).slice(0,8)
          // adding featured products in the state of our Products array to dispaly data

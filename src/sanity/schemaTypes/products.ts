@@ -1,4 +1,4 @@
-import { defineType } from "sanity";
+import { defineType, Rule } from "sanity";
 
 export const productSchema = defineType({
   name: "products",
@@ -9,6 +9,18 @@ export const productSchema = defineType({
       name: "title",
       title: "Product Title",
       type: "string",
+    },
+    {
+      name: "slug",
+      title: "Slug",
+      type: "slug",
+      options:{
+        source: "title",
+        maxLength: 96,
+      },
+      validation: (Rule:Rule) => Rule.required().error("Slug is required."),
+      
+
     },
     {
       name: "price",
@@ -65,6 +77,7 @@ export const productSchema = defineType({
           },
           { title: "Gallery", value: "gallery" },
           {title: "OurProducts", value: "ourProducts" },
+          {title: "CarouselProducts", value: "carouselProducts" },
         ],
       },
     },

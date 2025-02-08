@@ -63,7 +63,7 @@ const Footer = () => {
             </h4>
           </div>
           <div className="flex flex-col gap-3">
-            {footerSupport.chairsCategory.map((Support) => {
+            {footerSupport.supportNames.map((Support) => {
               return (
                 <h2
                   key={Support.id}

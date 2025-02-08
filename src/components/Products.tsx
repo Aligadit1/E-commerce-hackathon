@@ -22,6 +22,7 @@ const products = await client.fetch(`*[_type == "products"]{
   title,
   greenTag,
   badge,
+  "slug":slug.current,
 }`) 
 // adding featured products in the state of products array to dispaly data
 setProducts(products)

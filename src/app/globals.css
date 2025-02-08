@@ -154,7 +154,11 @@ opacity: 0.6;
   .product-res{
     height: 2200px;
   }
-
+  .custom-underline:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 3px; /* Adjust thickness */
+    text-underline-offset: 8px; /* Adjust distance from text */
+  }
 
 @media only screen and (max-width:768px){
   .logo-res-tab{
@@ -241,5 +245,24 @@ opacity: 0.6;
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+.success-message-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.success-message {
+  position: absolute;
+  right: -100%; /* Start from the right side */
+  animation: slideIn 3s forwards;
+}
+
+@keyframes slideIn {
+  0% {
+    right: -100%;
+  }
+  100% {
+    right: 0;
   }
 }

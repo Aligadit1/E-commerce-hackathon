@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import Heading from "../Heading";
 import { client } from "@/sanity/lib/client";
 import ProductCard from "../ProductCard";
-import { ProductInterface } from "../ProductInterface";
+import { ProductInterface } from "@/app/data/data";
 const FeaturedProducts =() => {
   // settting sates for handling data , errors and loading messsages
   const [featuredProducts, setFeaturedProducts] = useState([]);
@@ -24,6 +24,7 @@ const FeaturedProducts =() => {
           greenTag,
           badge,
           tags,
+          "slug":slug.current,
         }`)
         // filtering data with tag featured 
         const featuredProducts = products.filter((product:ProductInterface)=>product.tags && product.tags.includes("featured")).slice(0,4)

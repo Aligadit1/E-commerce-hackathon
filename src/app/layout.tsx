@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer";
+import { CartProvider } from "@/context/CartContext";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -29,9 +30,12 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased `}
-      ><Header />
+      >
+      <CartProvider>
+      <Header />
         {children}
         <Footer/>
+        </CartProvider>
       </body>
     </html>
   );

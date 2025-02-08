@@ -30,94 +30,6 @@ export const headerLinks=[
     href:"/about",
 },
 ];
-export const featuredProducts=[
-    {
-        id:1,
-        name:"Library Stool Chair",
-        price:"$39",
-        discountedPrice:"$20",
-        image:"/FP1.png",
-        blueTag:"New",
-    },
-    {
-        id:2,
-        name:"Library Stool Chair",
-        price:"$39",
-        discountedPrice:"$20",
-        image:"/FP2.png",
-        orangeTag:"Sale",
-    },
-    {
-        id:3,
-        name:"Library Stool Chair",
-        discountedPrice:"$20",
-        image:"/FP3.png",
-        blueTag:"New",
-    },
-    {
-        id:4,
-        name:"Library Stool Chair",
-        discountedPrice:"$20",
-        image:"/FP4.png",
-        blueTag:"New",
-    },
-];
-export const ourProducts=[
-    {
-        id:1,
-        name:"Library Stool Chair",
-        discountedPrice:"$20",
-        image:"/FP1.png",
-        blueTag:"New",
-    },
-    {
-        id:2,
-        name:"Library Stool Chair",
-        price:"$39",
-        discountedPrice:"$20",
-        image:"/FP2.png",
-        orangeTag:"Sale",
-    },
-    {
-        id:3,
-        name:"Library Stool Chair",
-        discountedPrice:"$20",
-        image:"/FP3.png",
-    },
-    {
-        id:4,
-        name:"Library Stool Chair",
-        discountedPrice:"$20",
-        image:"/FP4.png",
-    },
-    {
-        id:5,
-        name:"Library Stool Chair",
-        discountedPrice:"$20",
-        image:"/TC1.png",
-        blueTag:"New",
-    },
-    {
-        id:6,
-        name:"Library Stool Chair",
-        price:"$39",
-        discountedPrice:"$20",
-        image:"/OP6.png",
-        orangeTag:"Sale",
-    },
-    {
-        id:7,
-        name:"Library Stool Chair",
-        discountedPrice:"$20",
-        image:"/OP7.png",
-    },
-    {
-        id:8,
-        name:"Library Stool Chair",
-        discountedPrice:"$20",
-        image:"/FP1.png",
-    },
-]
 export const footerLinks ={
     logo:"/Comforty Logo.png",
     name:"Comforty",
@@ -185,7 +97,7 @@ export const footerCategory={
 }
 export const footerSupport={
     head : "Support",
-    chairsCategory:[
+    supportNames:[
         {
             id:1,
             name:"Help & Support"
@@ -234,3 +146,18 @@ export const contactData = [
         timing2:"Saturday-Sunday: 9:00 - 21:00",
     },
 ]
+export  interface ProductInterface {
+    _id: string ;
+    slug: string;
+    title: string;
+    imageUrl: string;
+    price: number;
+    priceWithoutDiscount: string;
+    badge?: string;
+    greenTag?: string;
+    description?: string; // Add description
+    size?: string ; // Add size
+    quantity?: number; // Add quantity
+    tags?: string[]; // Add tags
+  }
+  
