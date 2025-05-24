@@ -1,36 +1,31 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🛒 Comforty E-Commerce Furniture Marketplace
+Comforty is a modern and responsive e-commerce web app designed for a smooth and intuitive furniture shopping experience. Built with Next.js and Tailwind CSS, this project was developed as part of a hackathon to demonstrate essential marketplace features with a clean, user-friendly design.
 
-## Getting Started
+## 🚀 Features
 
-First, run the development server:
+- 🛍️ Product Listing with dynamic routing  
+- 🛒 Add to Cart functionality using context-based state management  
+- 📦 Single Product Pages  
+- 🎨 Fully responsive UI based on Figma design  
+- ⚡ Real-time data fetching from Sanity CMS using GROQ  
+- 📱 Mobile-first design with Tailwind CSS
+- Browse Categories: Explore a variety of furniture categories to find exactly what you need.
+- Product Listings: View detailed product cards including images, names, and pricing.
+- Product Detail Page: Get a closer look at individual items with comprehensive product details.
+- Shopping Cart: Add or remove products, with real-time cart updates and total calculations.
+- Responsive Design: Optimized for mobile, tablet, and desktop to ensure a consistent experience.
+- Fast Performance: Powered by Next.js for quick page loads and smooth navigation.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Tech Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Next.js** – App Router  
+- **TypeScript**  
+- **Tailwind CSS**  
+- **Sanity CMS**  
+- **GROQ** – Sanity data queries  
+- **Context API** – Global cart state  
+- **React Icons**
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- 
