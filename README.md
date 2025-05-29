@@ -27,5 +27,3 @@ Comforty is a modern and responsive e-commerce web app designed for a smooth and
 - **GROQ** – Sanity data queries  
 - **Context API** – Global cart state  
 - **React Icons**
-
-- 
